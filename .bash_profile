@@ -138,7 +138,8 @@ done
 }
 
 function arlog () {
-tail -F /var/log/system.log | \grep --line-buffered --color=always "${1}\[" | cut -d " " -f 3,6-
+#tail -F /var/log/system.log | \grep --line-buffered --color=always "glg.${1}\[" | cut -d " " -f 3,6-
+tail -F /var/log/system.log | \grep --line-buffered --color=always "glg.${1}\[" | gsed -e "s/^.* \([0-9][0-9]:[0-9][0-9]:[0-9][0-9]\) ${HOSTNAME}[^:]*/\1/g"
 }
 
 # History date format
