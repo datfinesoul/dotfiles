@@ -23,7 +23,7 @@ alias ctree='\tree -a -I .git'
 alias hp="history | percol | awk '{\$1=\$2=\$3=\"\"; print \$0;}'"
 
 #git diff for non-repo files
-alias diff="git diff --no-index"
+alias diff="git diff --no-index --no-prefix -U1000"
 
 # -A      List all entries except for . and ...  Always set for the super-user.
 # -F      Display a slash ('/') immediately after each pathname that is a directory, an asterisk ('*') after each that is executable, an at sign ('@') after each symbolic link,
@@ -140,6 +140,11 @@ done
 function arlog () {
 #tail -F /var/log/system.log | \grep --line-buffered --color=always "glg.${1}\[" | cut -d " " -f 3,6-
 tail -F /var/log/system.log | \grep --line-buffered --color=always "glg.${1}\[" | gsed -e "s/^.* \([0-9][0-9]:[0-9][0-9]:[0-9][0-9]\) ${HOSTNAME}[^:]*/\1/g"
+}
+
+function generate_app_id () {
+which uuid >> /dev/null || brew install ossp-uuid
+uuid | sed -e 's/-//g' -e 's/^/APP_/'
 }
 
 # History date format
