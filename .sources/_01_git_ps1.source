@@ -9,6 +9,10 @@ if ! git log -1 > /dev/null 2>&1; then
 fi
 # assign the branch to a BRANCH variable
 local BRANCH="$(git symbolic-ref --short HEAD 2> /dev/null)"
+local TRACKING="$(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD))"
+# tracking branch
+# git rev-parse --abbrev-ref --symbolic-full-name @{u}
+# git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)
 
 # if not on a named branch, show commit hash
 if [ ${#BRANCH} -eq 0 ]; then
@@ -29,6 +33,6 @@ else
   local COLOR="\e[m"
 fi
 
-printf "\e[33m(${COLOR}${BRANCH}\e[33m)\e[m"
+printf "\e[33m(${COLOR}${BRANCH}\e[33m -> ${TRACKING})\e[m"
 }
 # vi: set ft=sh :

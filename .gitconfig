@@ -54,6 +54,7 @@
 	# find all remote branches already in master
 	merged = branch -r --merged
 	cs = commit -S
+	rebase-preserve = rebase --committer-date-is-author-date
 
 [color]
 	status = auto
