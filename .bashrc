@@ -1,4 +1,5 @@
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export GPG_TTY=$(tty)
 
 if [[ -d "${HOME}/.nvm" ]]; then
   export NVM_DIR="${HOME}/.nvm"
