@@ -2,13 +2,17 @@
 
 set -o nounset; set -o errexit; set -o pipefail;
 
-# all . files that are not vim swapfiles
-DOTFILES=($(find . -type f -name ".*" ! -name ".*.swp" -d 1 -exec basename {} \;))
+# all . files that are not vim swapfiles and not .gitignore
+mapfile -t DOTFILES < <(find . -type f -name ".*" ! -name ".*.swp" ! -name ".gitignore" -d 1 -exec basename {} \;)
+# append directories to array, ignore .git
+mapfile -O ${#DOTFILES[@]} -t DOTFILES < <(find . -type d -name ".*" ! -name ".git" -d 1 -exec basename {} \;)
 for INDEX in "${!DOTFILES[@]}"; do
+
 	FILE="${DOTFILES[${INDEX}]}"
 	BACKUP_FILE="$(greadlink -f "./backup/${FILE}")"
 	HOME_FILE="$(greadlink -f "${HOME}/${FILE}")"
 	DOT_FILE="$(greadlink -f "./${FILE}")"
+
 	# skip anything already in backup (this includes .gitignore always)
 	if [[ -e "${BACKUP_FILE}" ]]; then
 		echo ".. skip ${FILE}, backup already exists"
@@ -22,7 +26,7 @@ for INDEX in "${!DOTFILES[@]}"; do
 	# backup files
 	if [[ -e "${HOME_FILE}" ]]; then
 		echo ".. backup ${FILE}"
-		\cp "${HOME_FILE}" "${BACKUP_FILE}"
+		\mv "${HOME_FILE}" "${BACKUP_FILE}"
 	fi
 	echo ".. link ${HOME_FILE} to ${DOT_FILE}"
 	ln -s "${DOT_FILE}" "${HOME_FILE}"
