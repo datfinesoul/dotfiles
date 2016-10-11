@@ -36590,10 +36590,15 @@
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 76 599 519 0 0 1920 1057 </string>
+	<string>894 214 599 388 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>271 154 796 473 0 0 1920 1057 </string>
+	<string>271 338 918 381 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 1 1886 1056 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -37390,7 +37395,7 @@
 			<key>Silence Bell</key>
 			<true/>
 			<key>Smart Cursor Color</key>
-			<true/>
+			<false/>
 			<key>Smart Selection Rules</key>
 			<array>
 				<dict>
