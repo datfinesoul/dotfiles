@@ -106,3 +106,6 @@ inoremap <F8> <C-o>:syntax sync fromstart<CR>
 
 " search for visually selected text
 vnoremap // y/<C-R>"<CR>
+
+" jsx in js
+let g:jsx_ext_required = 0
