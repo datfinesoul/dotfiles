@@ -31,11 +31,8 @@
 	lg = log --graph --date-order --pretty=format:'%Cred%h%Creset - %C(white)%s\n%C(red ul)          %Cgreen(%cr) %C(cyan)[%an,%cn]%Creset %C(yellow)%d%Creset'
 	lga = log --graph --date-order --all --pretty=format:'%Cred%h%Creset - %C(white)%s\n%C(red ul)          %Cgreen(%cr) %C(cyan)[%an,%cn]%Creset %C(yellow)%d%Creset'
 	lgn = log --no-merges --name-status --pretty=format:'%C(white)%m %Cred%h %Creset- %C(white)%s\n           %C(yellow)%d%n  %Cgreen%ci - %an,%cn - %Cresetparent: %Cred%p%Creset'
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	m = merge --no-ff --no-commit
 	mergelog = log --oneline --decorate --graph
-	ms = merge --squash
 	s = status -uall -s -b
 	ss = submodule status --recursive
 	su = submodule update --recursive
@@ -55,6 +52,7 @@
 	merged = branch -r --merged
 	cs = commit -S
 	rebase-preserve = rebase --committer-date-is-author-date
+	own = "!git lg --name-only --author=\"$(git config user.name)\""
 
 [color]
 	status = auto
