@@ -115,3 +115,6 @@ vnoremap <silent> * :<C-U>
 
 " jsx in js
 let g:jsx_ext_required = 0
+
+" use OS clipboard
+set clipboard=unnamed
