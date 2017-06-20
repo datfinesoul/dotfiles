@@ -117,7 +117,7 @@ vnoremap <silent> * :<C-U>
 let g:jsx_ext_required = 0
 
 " use OS clipboard
-set clipboard=unnamed
+"set clipboard=unnamed
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'

@@ -42,7 +42,12 @@ alias docker_shell='eval "$(boot2docker shellinit)"'
 alias mailserver='sudo python -m smtpd -n -c DebuggingServer localhost:25'
 alias nl="npm list -depth=0"
 
-alias hgrep='history | cut -d " " -f 6-'
+alias historyc='history | cut -d " " -f 6-'
+
+# TODO: need to factor out default branch, instead of just master
+alias git_merged=$'git branch -r --no-color --merged | awk \'{if ($1 ~ /^origin\//){ x=substr($1, 8); if (x !~ /(master|HEAD)/) print x }}\''
+alias git_merged_age=$'git_merged | xargs -I {} bash -c \'echo $(git show -s --format=format:%ci $(git merge-base origin/{} master)) {}\' | sort'
+alias git_remote=$'git branch -r --no-color | awk \'{if ($1 ~ /^origin\//){ if ($1 !~ /(master|HEAD)/) print $1 }}\''
 
 for FILE in ~/.sources/*.source; do
   if [[ -f "${FILE}" ]]; then
@@ -55,6 +60,8 @@ source ~/.bashrc
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
+function port_user () { lsof -i :$1; }
+function strip_colors () { gsed -u -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"; }
 function osx_bundle() { defaults read "/Applications/${@}.app/Contents/Info.plist" CFBundleIdentifier; }
 function growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 function cwd() { cd "$(dirname $(which "${1}"))"; }
@@ -152,9 +159,9 @@ export HISTTIMEFORMAT="%y/%m/%d %T "
 # Ignore dupliate commands even if there is a space difference, and don't save them to history
 export HISTCONTROL="erasedups:ignoreboth"
 # Number of commands to save
-export HISTSIZE=500000
+export HISTSIZE=-1
 # History maxiumum file size
-export HISTFILESIZE=50000
+export HISTFILESIZE=-1
 # Ignore exit commands from history
 export HISTIGNORE="&:[ ]*:exit"
 # Never overwrise history, always append
