@@ -1,0 +1,5 @@
+# vi: set ft=sh :
+function ec2_prod_dev () {
+  ORDER="${1}"
+  icdiff --recursive "${HOME}/code/ec2.starphleet.headquarters/${ORDER}/" "${HOME}/code/ec2.starphleet.dev.headquarters/${ORDER}/"
+}
