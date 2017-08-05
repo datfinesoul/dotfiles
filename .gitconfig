@@ -22,8 +22,6 @@
 	dc = diff --cached --ignore-space-at-eol --ignore-space-change
 	ds = diff --stat
 	dcs = diff --cached --stat
-	dw = "!sh -c 'GIT_PAGER=\"\" git d'"
-	dcw = "!sh -c 'GIT_PAGER=\"\" git dc'"
 	f=log --oneline --merges --pretty=format:'%Cred%h%Creset - %C(white)%s %Cgreen(%cr)%C(blue) [%cn]%C(yellow)%d%Creset' --abbrev-commit
 	fa = fetch --all
 	lb = checkout -
@@ -31,7 +29,9 @@
 	lg = log --graph --date-order --pretty=format:'%Cred%h%Creset - %C(white)%s\n%C(red ul)          %Cgreen(%cr) %C(cyan)[%an,%cn]%Creset %C(yellow)%d%Creset'
 	lga = log --graph --date-order --all --pretty=format:'%Cred%h%Creset - %C(white)%s\n%C(red ul)          %Cgreen(%cr) %C(cyan)[%an,%cn]%Creset %C(yellow)%d%Creset'
 	lgn = log --no-merges --name-status --pretty=format:'%C(white)%m %Cred%h %Creset- %C(white)%s\n           %C(yellow)%d%n  %Cgreen%ci - %an,%cn - %Cresetparent: %Cred%p%Creset'
-	m = merge --no-ff --no-commit
+	ms = merge --no-ff --no-commit
+	ps = pull --no-ff --no-commit
+	cs = commit -S
 	mergelog = log --oneline --decorate --graph
 	s = status -uall -s -b
 	ss = submodule status --recursive
@@ -50,7 +50,6 @@
 	sbu = "!f() { git subtree pull --prefix $2 $1 master --squash; }; f"
 	# find all remote branches already in master
 	merged = branch -r --merged
-	cs = commit -S
 	rebase-preserve = rebase --committer-date-is-author-date
 	own = "!git lg --name-only --author=\"$(git config user.name)\""
 
