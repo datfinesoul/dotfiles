@@ -22,6 +22,7 @@
 	dc = diff --cached --ignore-space-at-eol --ignore-space-change
 	ds = diff --stat
 	dcs = diff --cached --stat
+	dn = diff --name-only
 	f=log --oneline --merges --pretty=format:'%Cred%h%Creset - %C(white)%s %Cgreen(%cr)%C(blue) [%cn]%C(yellow)%d%Creset' --abbrev-commit
 	fa = fetch --all
 	lb = checkout -

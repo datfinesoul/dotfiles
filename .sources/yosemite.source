@@ -1,3 +1,5 @@
+# vi: set ft=sh :
+
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
@@ -12,10 +14,14 @@ alias flushdns="sudo killall -HUP mDNSResponder"
 
 alias spotlight_off="sudo mdutil -a -i off"
 alias spotlight_on="sudo mdutil -a -i on"
-alias spotlight_bustcache="sudo rm -rf /.Spotlight-V100/*"
+alias spotlight_bustcache="sudo mdutil -E /"
 alias tm_local_off="sudo tmutil disablelocal"
 alias tm_local_on="sudo tmutil enablelocal"
 alias reset_app_store="defaults write com.apple.appstore ShowDebugMenu -bool true"
 
 alias wireless_networks="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s"
-# vi: set ft=sh :
+
+alias v6off='networksetup -setv6off "USB 10/100/1000 LAN"'
+alias v6on='networksetup -setv6automatic "USB 10/100/1000 LAN"'
+alias vpn-la='sudo openvpn .vpn/UDP-1195_AES2048_SHA256/US-Los_Angeles_3_UDP1195_SMART.ovpn'
+

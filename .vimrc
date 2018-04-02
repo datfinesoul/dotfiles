@@ -39,9 +39,11 @@ let g:ctrlp_dotfiles = 1
 
 map <Leader><Space> :let @/=""<CR>
 
-nmap <F4> :set number! number?<CR>
 set number                      " Show line numbers
-set norelativenumber		" Show numbers relative to current line
+set norelativenumber            " Show numbers relative to current line
+"map <silent> <F2> :set invnumber<cr>
+noremap <F2> :set invnumber<CR>
+inoremap <F2> <C-O>:set invnumber<CR>
 
 set textwidth=0 wrapmargin=0
 set nowrap " Don't wrap lines
