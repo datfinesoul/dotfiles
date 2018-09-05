@@ -14,6 +14,7 @@
 	renameLimit = 5000
 [alias]
 	bc = branch --contains
+	cb = checkout --no-track -b
 	cleanup = "!sh -c 'git rm $(git ls-files —deleted)'"
 	cob = "!bash -c 'git checkout $(git branch -a | awk '\"'\"'{FS=\"[/]\";} {gsub(/remotes\\/[^\\/]+\\//, \"\"); gsub(/[\t *]/, \"\"); if ($0 !~ /HEAD/) {print $1;} }'\"'\"' | sort -ui | percol)'"
 	cmp = "!sh -c 'git log --left-right --oneline --no-merges --pretty=format:\"%m %Cred%h%Creset - %s %Cgreen(%an - %cr)%Creset %C(yellow)%d%Creset\" $0...'"
@@ -72,7 +73,7 @@
 [help]
 	format = html
 [web]
-	browser = open
+	browser = gc
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
@@ -91,3 +92,7 @@
 	prune = true
 [status]
 	relativePaths = false
+[browser "gc"]
+	cmd = "open -a \"Google Chrome.app\""
+[browser "ff"]
+	cmd = open -a Firefox.app
