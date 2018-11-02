@@ -75,6 +75,7 @@ function nvmrc () {
   local DESIRED_VERSION="$(<.nvmrc)"
   if [[ "${CURRENT_VERSION//[$'\r\t\n v']}" != "${DESIRED_VERSION//[$'\r\t\n v']}" ]]; then
     nvm use "${DESIRED_VERSION//[$'\r\t\n v']}"
+    echo
   fi
 }
 export PROMPT_COMMAND="nvmrc"
@@ -128,6 +129,13 @@ function npm_up () {
   npm install -S $1
 }
 
+function c () {
+  cat $1 | pbcopy
+}
+
+function uriencode () {
+  echo "${1}" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "" | cut -c 3-
+}
 
 # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 COLOR_CLEAR="\[\e[0m\]"

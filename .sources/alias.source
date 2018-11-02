@@ -48,3 +48,4 @@ alias git_remote=$'git branch -r --no-color | awk \'{if ($1 ~ /^origin\//){ if (
 alias git_no_tracking=$'git branch -r | awk \'{print $1}\' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk \'{print $1}\''
 
 alias ag="ag --ignore 'node_modules'"
+alias bu='brew update; brew upgrade; brew cleanup; brew doctor && brew cask upgrade; brew cask doctor'
