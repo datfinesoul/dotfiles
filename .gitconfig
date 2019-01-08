@@ -16,7 +16,7 @@
 	bc = branch --contains
 	cb = checkout --no-track -b
 	cleanup = "!sh -c 'git rm $(git ls-files —deleted)'"
-	cob = "!bash -c 'git checkout $(git branch -a | awk '\"'\"'{FS=\"[/]\";} {gsub(/remotes\\/[^\\/]+\\//, \"\"); gsub(/[\t *]/, \"\"); if ($0 !~ /HEAD/) {print $1;} }'\"'\"' | sort -ui | percol)'"
+	cob = "!bash -c 'git checkout $(git branch -a | awk '\"'\"'{FS=\"[/]\";} {gsub(/remotes\\/[^\\/]+\\//, \"\"); gsub(/[\t *]/, \"\"); if ($0 !~ /HEAD/) {print $1;} }'\"'\"' | sort -ui | percol --match-method regex)'"
 	cmp = "!sh -c 'git log --left-right --oneline --no-merges --pretty=format:\"%m %Cred%h%Creset - %s %Cgreen(%an - %cr)%Creset %C(yellow)%d%Creset\" $0...'"
 	crs = clone --recurse-submodules
 	d = diff --ignore-space-at-eol --ignore-space-change

@@ -124,3 +124,9 @@ let g:jsx_ext_required = 0
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+let g:javascript_opfirst = 1
+
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+endif

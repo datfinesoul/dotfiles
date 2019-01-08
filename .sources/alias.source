@@ -17,7 +17,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias ctree='\tree -a -I .git'
 
 #history + percol - date
-alias hp="history | percol | awk '{\$1=\$2=\$3=\"\"; print \$0;}'"
+alias hp="history | percol --match-method regex | awk '{\$1=\$2=\$3=\"\"; print \$0;}'"
 
 #git diff for non-repo files
 alias diff="git diff --no-index --no-prefix -U1000"
@@ -49,3 +49,4 @@ alias git_no_tracking=$'git branch -r | awk \'{print $1}\' | egrep -v -f /dev/fd
 
 alias ag="ag --ignore 'node_modules'"
 alias bu='brew update; brew upgrade; brew cleanup; brew doctor && brew cask upgrade; brew cask doctor'
+alias deps='jq "{"prod":.dependencies, "dev":.devDependencies}" package.json'
