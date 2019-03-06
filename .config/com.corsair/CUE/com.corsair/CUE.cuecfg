@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<map name="BorderlessWindow">
+		<binary name="windowGeometry">%00%00%00%13%00%00%00%01%15%00%00%00s%00%00%06F%00%00%03%AD</binary>
+		<value name="windowVisibility">0</value>
+	</map>
+	<map name="CommonSettings">
+		<value name="DevicePanelMinimized">false</value>
+	</map>
+	<map name="Devices">
+		<map name="IRONCLAW RGB">
+			<map name="09008029AF29A5255A987935F5001BC4">
+				<value name="DeviceName">IRONCLAW RGB</value>
+				<value name="DpiBrightnessLevel">100</value>
+			</map>
+		</map>
+	</map>
+	<value name="Language">en</value>
+	<map name="MobileServer">
+		<map name="Credentials">
+			<value name="Password">bpySiI6</value>
+			<value name="PasswordHint"></value>
+			<value name="PasswordType">1</value>
+		</map>
+		<binary name="ServerId">%00%00%00%0C%00%00%00%00%10%25U%24q%22%5Bb_%3CRGFvA%25Q</binary>
+	</map>
+	<map name="Profiles">
+		<binary name="StoredToDevice">%00%00%00%09%00%00%00%00%03%00%00%00%1E%00%5D%1B%00%00%01%00%00%00%00%00%00%00%00%00%00%00%00%00%00%1E%00%5D%1B%00%00%02%00%00%00%00%00%00%00%00%00%00%00%00%00%00%1E%00%5D%1B%00%00%03%00%00%00%00%00%00%00%00%00%00%00</binary>
+	</map>
+	<map name="QQControlsFileDialog">
+		<binary name="favoriteFolders">%00%00%00%09%00%00%00%00%00</binary>
+		<value name="height">0</value>
+		<value name="sidebarSplit">118.575</value>
+		<value name="sidebarVisible">true</value>
+		<value name="sidebarWidth">80</value>
+		<value name="width">0</value>
+	</map>
+	<map name="SwUpdate">
+		<value name="LastCheckDate">2019-02-27</value>
+	</map>
+</config>

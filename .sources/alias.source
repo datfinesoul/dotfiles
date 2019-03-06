@@ -50,3 +50,6 @@ alias git_no_tracking=$'git branch -r | awk \'{print $1}\' | egrep -v -f /dev/fd
 alias ag="ag --ignore 'node_modules'"
 alias bu='brew update; brew upgrade; brew cleanup; brew doctor && brew cask upgrade; brew cask doctor'
 alias deps='jq "{"prod":.dependencies, "dev":.devDependencies}" package.json'
+
+alias recolor="source $HOME/.config/base16-shell/base16-default.dark.sh"
+alias purge="printf '\x1b[2J\x1b[3J\x1b[1;1H'"
