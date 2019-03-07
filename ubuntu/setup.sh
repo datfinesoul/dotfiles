@@ -36,3 +36,8 @@ done
 # fix to not hardcode the .dotfiles path
 BASE16=.config/base16-shell
 rsync -avz $HOME/.dotfiles/ubuntu/$BASE16/ $HOME/$BASE16
+
+KITTY=.config/kitty
+rsync -avz $HOME/.dotfiles/ubuntu/$KITTY/ $HOME/$KITTY
+
+

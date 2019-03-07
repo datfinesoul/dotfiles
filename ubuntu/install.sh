@@ -22,3 +22,9 @@ else
 	sed -i "s/Icon\=kitty/Icon\=\/home\/$USER\/.local\/kitty.app\/share\/icons\/hicolor\/256x256\/apps\/kitty.png/g" \
 		$HOME/.local/share/applications/kitty.desktop
 fi
+
+#### Enable F(x) keys by default on apple keyboards if driver is installed
+# 0 = Fn key disabled
+# 1 = Fn key pressed by default
+# 2 = Fn key released by default
+echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
