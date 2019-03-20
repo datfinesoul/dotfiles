@@ -53,3 +53,5 @@ alias deps='jq "{"prod":.dependencies, "dev":.devDependencies}" package.json'
 
 alias recolor="source $HOME/.config/base16-shell/base16-default.dark.sh"
 alias purge="printf '\x1b[2J\x1b[3J\x1b[1;1H'"
+
+alias fix_fn="echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode"

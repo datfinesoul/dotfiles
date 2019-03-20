@@ -17,3 +17,7 @@ https://github.com/source-foundry/Hack
 
 
 possibly in fonts-hack-ttf apt package
+
+
+vim /etc/modprobe.d/alsa-base.conf
+	options snd-hda-intel model=dell-headset-multi

@@ -28,3 +28,9 @@ fi
 # 1 = Fn key pressed by default
 # 2 = Fn key released by default
 echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
+
+# echo options hid_apple fnmode=2 | sudo tee -a /etc/modprobe.d/hid_apple.conf
+# sudo update-initramfs -u -k all
+# sudo reboot
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash

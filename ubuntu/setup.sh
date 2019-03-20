@@ -39,5 +39,3 @@ rsync -avz $HOME/.dotfiles/ubuntu/$BASE16/ $HOME/$BASE16
 
 KITTY=.config/kitty
 rsync -avz $HOME/.dotfiles/ubuntu/$KITTY/ $HOME/$KITTY
-
-
