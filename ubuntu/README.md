@@ -21,3 +21,5 @@ possibly in fonts-hack-ttf apt package
 
 vim /etc/modprobe.d/alsa-base.conf
 	options snd-hda-intel model=dell-headset-multi
+
+recommended way to install would be using tmux
