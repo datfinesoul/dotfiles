@@ -1,6 +1,6 @@
 ### Manual for now
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/datfinesoul/dotfiles/dotfiles1804/go.sh | bash
 
 
 

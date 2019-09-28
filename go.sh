@@ -5,6 +5,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 function finish {
+  echo .
 }
 trap finish EXIT
 
