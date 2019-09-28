@@ -1,5 +1,9 @@
 ### Manual for now
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+
+
 mkdir ~/.local/bin
 .bash_profile PATH to ~/.local/bin
 
