@@ -33,6 +33,8 @@ for INDEX in "${!DOTFILES[@]}"; do
 	#printf "%s\t%s\n" "${INDEX}" "${FILE}"
 done
 
+# TODO: this should symlink the individual directories
+
 # fix to not hardcode the .dotfiles path
 BASE16=.config/base16-shell
 rsync -avz $HOME/.dotfiles/ubuntu/$BASE16/ $HOME/$BASE16

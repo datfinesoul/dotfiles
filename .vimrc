@@ -30,7 +30,11 @@ set switchbuf=usetab,newtab     " open new buffers always in new tabs
 nnoremap <F3> :set invpaste paste?<CR>
 set pastetoggle=<F3>
 
-let g:ctrlp_custom_ignore = '\.vagrant\|\.git$\|node_modules\|DS_Store\|bower_components\|platforms'
+"let g:ctrlp_custom_ignore = '\.vagrant\|\.git\|node_modules\|DS_Store\|bower_components\|platforms'
+let g:ctrlp_custom_ignore = {
+	\   'dir' : '\.git$\|\.vagrant$\|bower_components\|node_modules' ,
+	\ 	'file' : '\v\.(exe|dll|lib)$\|DS_Store'
+	\ }
 "let g:ctrlp_custom_ignore = {
   "\ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$',
   "\ 'file': '\.exe$\|\.so$\|\.dat$'
@@ -128,5 +132,5 @@ endif
 let g:javascript_opfirst = 1
 
 if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g "" --ignore "nodes_modules" --ignore ".git"'
 endif

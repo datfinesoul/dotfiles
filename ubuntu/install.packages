@@ -4,3 +4,10 @@ fonts-firacode
 fonts-hack-ttf
 
 silversearcher-ag
+jq
+icdiff
+htop
+#glances
+gawk
+percol
+net-tools

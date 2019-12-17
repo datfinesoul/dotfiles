@@ -5,7 +5,7 @@
 	whitespace = -trailing-space
 	ignorecase = true
 	excludesfile = /Users/phadviger/.gitignore_global
-	editor = /usr/local/bin/vim
+	editor = /usr/bin/vim
 	pager = less -FXRS -x2
 [diff]
 	renames = copies
@@ -25,7 +25,7 @@
 	dcs = diff --cached --stat
 	dn = diff --name-only
 	f=log --oneline --merges --pretty=format:'%Cred%h%Creset - %C(white)%s %Cgreen(%cr)%C(blue) [%cn]%C(yellow)%d%Creset' --abbrev-commit
-	fa = fetch --all
+	fa = fetch --all --tags
 	lb = checkout -
 	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 	lg = log --graph --date-order --pretty=format:'%Cred%h%Creset - %C(white)%s\n%C(red ul)          %Cgreen(%cr) %C(cyan)[%an,%cn]%Creset %C(yellow)%d%Creset'
@@ -96,3 +96,5 @@
 	cmd = "open -a \"Google Chrome.app\""
 [browser "ff"]
 	cmd = open -a Firefox.app
+[commit]
+	template = ~/.git_commit_template

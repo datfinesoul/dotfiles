@@ -4,8 +4,9 @@ set -o nounset
 set -o errexit
 set -o pipefail
 
+sudo apt -y full-upgrade
 #### GENERAL PACKAGES
-sudo apt-get -y install $(< ./install.packages)
+sudo apt -y install $(< ./install.packages)
 
 #### Kitty
 
@@ -34,3 +35,6 @@ echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
 # sudo reboot
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+# Dropbox
+# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
