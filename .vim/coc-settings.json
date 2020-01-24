@@ -73,7 +73,7 @@
   },
   "languageserver": {
     "golang": {
-      "command": "~/go/bin/go-langserver",
+      "command": "/home/phadviger/go/bin/go-langserver",
       "filetypes": [
         "go"
       ],
@@ -81,7 +81,8 @@
         "gocodeCompletionEnabled": true,
         "diagnosticsEnabled": true,
         "lintTool": "golint"
-      }
+      },
+      "trace.server": "verbose"
     }
   }
 }
