@@ -116,10 +116,6 @@ vnoremap <silent> * :<C-U>
 " use OS clipboard
 "set clipboard=unnamed
 
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
 let g:javascript_opfirst = 1
 
 if executable('ag')
