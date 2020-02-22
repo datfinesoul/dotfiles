@@ -95,11 +95,6 @@ let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235 guibg=#262626 "rgb=38,38,38
 let g:js_indent_log = 0
 
-"let g:CoffeeAutoTagDisabled=<0 or 1>     " Disables autotaging on save (Default: 0 [false])
-"let g:CoffeeAutoTagFile=<filename>       " Name of the generated tag file (Default: ./tags)
-"let g:CoffeeAutoTagIncludeVars=<0 or 1>  " Includes variables (Default: 0 [false])
-"let g:CoffeeAutoTagTagRelative=<0 or 1>  " Sets file names to the relative path from the tag file location to the tag file location (Default: 1 [true])
-
 let g:html_exclude_tags = ['html', 'style', 'script', 'body']
 
 au BufRead,BufNewFile *.tag setfiletype html
@@ -108,7 +103,6 @@ au BufRead,BufNewFile *.tag setfiletype html
 " toggle syntax highlighting fix in long files
 noremap <F8> <Esc>:syntax sync fromstart<CR>
 inoremap <F8> <C-o>:syntax sync fromstart<CR>
-"nmap <F8> :TagbarToggle<CR>
 
 " search for visually selected text
 vnoremap // y/<C-R>"<CR>
