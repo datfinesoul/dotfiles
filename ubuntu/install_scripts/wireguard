@@ -1,0 +1,6 @@
+sudo add-apt-repository -y ppa:wireguard/wireguard
+sudo apt-get -y update
+sudo apt-get -y install wireguard
+
+# wg-quick up wg5
+# wg-quick down wg5

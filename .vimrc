@@ -255,3 +255,5 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "let g:airline#extensions#tabline#formatter = 'default'
 "let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
