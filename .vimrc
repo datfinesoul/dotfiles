@@ -257,3 +257,14 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+vnoremap > >gv
+vnoremap < <gv
+
+"augroup numbertoggle
+  "autocmd!
+  "autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+  "autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+"augroup END
+autocmd BufRead,BufNewFile Dockerfile.*,Dockerfile-* set filetype=dockerfile
+

@@ -1,5 +1,9 @@
+[init]
+	defaultBranch = main
 [push]
 	default = simple
+[pull]
+	rebase = false
 [core]
 	autocrlf = input
 	whitespace = -trailing-space
@@ -59,6 +63,9 @@
 	status = auto
 	branch = auto
 
+[branch]
+	autoSetupMerge = false
+
 [color "status"]
 	added = green
 	changed = cyan
@@ -93,7 +100,7 @@
 [status]
 	relativePaths = false
 [browser "gc"]
-	cmd = "open -a \"Google Chrome.app\""
+	cmd = "google-chrome"
 [browser "ff"]
 	cmd = open -a Firefox.app
 [commit]
